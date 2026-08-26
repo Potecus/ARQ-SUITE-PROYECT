@@ -25,34 +25,6 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm 
-name: Deploy Vite to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
         run: npm install
 
       - name: Build
@@ -68,3 +40,4 @@ jobs:
 
       - name: Deploy
         uses: actions/deploy-pages@v4
+git add .github/workflows/deploy.yml && git commit -m "Fix Pages deployment workflow"
