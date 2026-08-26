@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -40,4 +39,3 @@ jobs:
 
       - name: Deploy
         uses: actions/deploy-pages@v4
-git add .github/workflows/deploy.yml && git commit -m "Fix Pages deployment workflow"
